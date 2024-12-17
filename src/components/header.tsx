@@ -14,7 +14,28 @@ import {
 } from "@nextui-org/react";
 
 export default function Header() {
-    const session = useSession();
+    const { data } = useSession();
+
+    let authContent: React.ReactNode;
+    if (data?.user) {
+        authContent = <Avatar src={data.user.image || ""} />;
+    } else {
+        authContent = (
+            <>
+                <NavbarItem>
+                    <Button type="submit" color="secondary" variant="bordered">
+                        Sign In
+                    </Button>
+                </NavbarItem>
+
+                <NavbarItem>
+                    <Button type="submit" color="primary" variant="flat">
+                        Sign Up
+                    </Button>
+                </NavbarItem>
+            </>
+        );
+    }
 
     return (
         <Navbar className="shadow mb-6">
@@ -29,15 +50,7 @@ export default function Header() {
                 </NavbarItem>
             </NavbarContent>
 
-            <NavbarContent justify="end">
-                <NavbarItem>
-                    {session.data?.user ? (
-                        <div>Signed In</div>
-                    ) : (
-                        <div>Signed Out</div>
-                    )}
-                </NavbarItem>
-            </NavbarContent>
+            <NavbarContent justify="end">{authContent}</NavbarContent>
         </Navbar>
     );
 }
