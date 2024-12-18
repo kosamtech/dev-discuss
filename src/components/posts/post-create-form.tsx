@@ -47,7 +47,7 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
                             label="Title"
                             labelPlacement="outside"
                             placeholder="Title"
-                            isInvalid={!!formState.errors?.title?.join(", ")}
+                            isInvalid={!!formState.errors?.title}
                             errorMessage={formState.errors?.title?.join(", ")}
                         />
                         <Textarea
@@ -55,7 +55,7 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
                             label="content"
                             labelPlacement="outside"
                             placeholder="Content"
-                            isInvalid={!!formState.errors?.content?.join(", ")}
+                            isInvalid={!!formState.errors?.content}
                             errorMessage={formState.errors?.content?.join(", ")}
                         />
 
