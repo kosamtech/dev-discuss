@@ -1,10 +1,9 @@
 "use server";
 
 import { db } from "@/db";
-import { Topic } from "@prisma/client";
 import { PostWithData } from "@/db/queries/posts";
 
-export async function queryTopic(data: Topic[]) {
+export async function queryTopic() {
     return await db.topic.findMany();
 }
 

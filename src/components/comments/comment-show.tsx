@@ -1,4 +1,3 @@
-import type { CommentWithAuthor } from "@/db/queries/comments";
 import Image from "next/image";
 import CommentCreateForm from "./comment-create-form";
 import { fetchCommentsByPostId } from "@/db/queries/comments";

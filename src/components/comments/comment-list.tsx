@@ -1,4 +1,3 @@
-import type { CommentWithAuthor } from "@/db/queries/comments";
 import { fetchCommentsByPostId } from "@/db/queries/comments";
 import CommentShow from "./comment-show";
 

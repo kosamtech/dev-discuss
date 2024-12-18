@@ -30,7 +30,7 @@ export async function createTopic(
     formState: CreateTopicFormState,
     formData: FormData,
 ): Promise<CreateTopicFormState> {
-    await new Promise((res, rej) => setTimeout(res, 2000));
+    await new Promise((res) => setTimeout(res, 2000));
 
     const result = createTopicSchema.safeParse({
         name: formData.get("name"),

@@ -4,3 +4,4 @@ export { createPost } from "./create-post";
 export { createTopic } from "./create-topic";
 export { createComment } from "./create-comments";
 export { queryTopic, queryComment, fetchTopPost } from "./query-model";
+export { search } from "./search";
